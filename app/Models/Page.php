@@ -23,6 +23,11 @@ class Page extends Model
         'meta_description',
     ];
 
+    public function scopeActive($query)
+    {
+        return $query->where('site_display', 1);
+    }
+
 
     public function sluggable()
     {

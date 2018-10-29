@@ -47,8 +47,11 @@ class NewsController extends Controller
 
     public function getList(Request $request)
     {
-        $news = $this->news->with('mainImage')->orderBy('created_at', 'desc')->paginate(20);
-dd($news->toArray());
+        $news = $this->news
+            ->with('mainImage', 'category')
+            ->orderBy('created_at', 'desc')
+            ->paginate(20);
+
         return response()->json([
             'tableData' => view('backend.content.news.list', [
                 'news' => $news,

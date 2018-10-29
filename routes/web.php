@@ -184,4 +184,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminMiddleware:admins'], fu
 |
 */
 
-Route::get('/', 'Frontend\MainController@index')->name('app');
+Route::get('/',         'Frontend\MainController@index');
+Route::get('/page/{slug}',    'Frontend\MainController@about');

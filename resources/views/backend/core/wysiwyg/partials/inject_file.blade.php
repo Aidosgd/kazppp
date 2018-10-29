@@ -1,0 +1,1 @@
+<a href="{{asset('storage/uploads/' . $file->original_file_name)}}" target="_blank">{{$file->client_file_name}}</a>
