@@ -184,5 +184,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminMiddleware:admins'], fu
 |
 */
 
-Route::get('/',         'Frontend\MainController@index');
-Route::get('/page/{slug}',    'Frontend\MainController@about');
+Route::get('/',                 'Frontend\MainController@index');
+Route::get('/page/{slug}',      'Frontend\MainController@page');
+Route::get('/contacts',         'Frontend\MainController@contacts');

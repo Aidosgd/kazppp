@@ -15,10 +15,17 @@ class MainController extends Controller
         return view('frontend.pages.welcome');
     }
 
-    public function about($slug)
+    public function page($slug)
     {
         $page = Page::active()->where('slug', $slug)->first();
 
         return view('frontend.pages.index', compact('page'));
+    }
+
+    public function contacts()
+    {
+        $page = Page::active()->where('slug', 'kontakty')->first();
+
+        return view('frontend.pages.contacts', compact('page'));
     }
 }
